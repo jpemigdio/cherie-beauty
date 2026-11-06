@@ -143,8 +143,136 @@ nav a:hover {
 }
 
 
+/* Catalogo de Produto*/
+
+.products {
+    padding: 80px 8%;
+    background-color: #FFFFFF;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-subtitle {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #A47C5A;
+    margin-bottom: 15px;
+}
 
 
+.section-header h2 {
+    font-family: Georgia, serif;
+    font-size: 40px;
+    font-weight: normal;
+    color: #5a4035;
+    margin-bottom: 15px;
+}
 
+.section-header p {
+    font-size: 14px;
+    color: #76665d;
+}
 
+/*Grade de produtos*/
 
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.product-card {
+    background-color: #f8f4ef;
+    overflow: hidden;
+}
+
+.product-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 25px;
+}
+
+.product-category {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #A47C5A;
+}
+
+.product-info h3 {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: normal;
+    color: #5a4035;
+    margin: 12px 0;
+}
+
+.product-info p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #76665d;
+    margin-bottom: 18px;
+}
+
+.product-info strong {
+    display: block;
+    font-size: 16px;
+    color: #5a4035;
+    margin-bottom: 20px;
+}
+
+/* Botão do produto */
+
+.product-button {
+    display: block;
+    text-align: center;
+    padding: 13px;
+    background-color: #5a4035;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: background-color 0.3s;
+}
+
+.product-button:hover {
+    background-color: #A47C5A;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+    .products {
+        padding: 60px 6%;
+    }
+    .section-header h2 {
+        font-size: 32px;
+    }
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .product-image {
+        height: 280px;
+    }
+}
