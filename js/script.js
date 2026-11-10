@@ -1,5 +1,6 @@
 //colocar as informações em um arquivo JavaScript e deixar o proprio codigo criar os cards automaticamente
 const produtos = [
+    //Base de dados dos produtos da CHERIE BEAUTY
     {
         id: 1,
         nome: "Beauty Essentials",
@@ -32,6 +33,10 @@ function renderizarProdutos() {
 
     const gradeProdutos = document.querySelector(".products-grid");
 
+    if(!secaoProdutos || !gradeProdutos || !secaoProdutos.dataset.category){
+        return;
+    }
+
     const categoriaAtual = secaoProdutos.dataset.category;
 
     const produtosFiltrados = produtos.filter(function(produto){
@@ -39,4 +44,36 @@ function renderizarProdutos() {
     });
 
 
+    gradeProdutos.innerHTML = produtosFiltrados.map(function(produto){
+        return `
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="${produto.imagem}" alt="${produto.nome}">
+                </div>
+
+                <div class="product-info">
+                    <span class="product-category">
+                        ${produto.categoria}
+                    </span>
+                    
+                    <h3>${produto.nome}</h3>
+
+                    <p>${produto.descricao}</p>
+
+                    <strong>
+                        ${produto.preco.toLocaleString("pt-BR", {
+                            style: "currency",
+                            currency: "BRL"
+                        })}
+
+                    </strong>
+
+                    <a href="#" class="product-button">
+                        Ver produto
+                    </a>
+            </div>
+    `;
+    }).join("");
 }
+
+renderizarProdutos();
